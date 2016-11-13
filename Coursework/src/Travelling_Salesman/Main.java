@@ -2,8 +2,6 @@ package Travelling_Salesman;
 
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 
 public class Main {
 	
@@ -25,7 +23,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		NearestNeighbour neighbour = new NearestNeighbour();
+		//NearestNeighbour neighbour = new NearestNeighbour();
 		MyAlgorithm test = new MyAlgorithm();
 					
 		ArrayList<Point2D> cities = new ArrayList<Point2D>();
@@ -33,11 +31,18 @@ public class Main {
 		//All the city files here
 		
 		//cities = FileLoader.loadTSPLib("src/Travelling_Salesman/berlin52.tsp");
-		cities = FileLoader.loadTSPLib("src/Travelling_Salesman/rl5915.tsp");
+		
+		//cities = FileLoader.loadTSPLib("src/Travelling_Salesman/d493.tsp");
+		
+		//cities = FileLoader.loadTSPLib("src/Travelling_Salesman/rl1889.tsp");
+		
+		//cities = FileLoader.loadTSPLib("src/Travelling_Salesman/rl5915.tsp");
+		
+		cities = FileLoader.loadTSPLib("src/Travelling_Salesman/rl11849.tsp");
 
 		System.out.println("Before ArrayList size: " + cities.size());
 		System.out.format("Before route length: %f%n", routeLength(cities));
-		
+
 		
 		//Store the system time before running the algorithm
 		final double startTime = System.currentTimeMillis();

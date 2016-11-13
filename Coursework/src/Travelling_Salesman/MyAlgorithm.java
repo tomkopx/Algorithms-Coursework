@@ -2,6 +2,8 @@ package Travelling_Salesman;
 
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Random;
 
 public class MyAlgorithm {
@@ -11,6 +13,7 @@ public class MyAlgorithm {
 		return Point2D.distance(currentCity.getX(), currentCity.getY(), possibleCity.getX(), possibleCity.getY());
 	}
 	
+	//Random number generator for the random starting city
 	public static int randInt(int min, int max) {
 
 	    // Usually this can be a field rather than a method variable
@@ -27,9 +30,30 @@ public class MyAlgorithm {
 		
 		ArrayList<Point2D> result = new ArrayList<Point2D>();
 		Point2D closest = null;
+		
+		//Sorting the arrayList from biggest to lowest in both coordinates
+		Collections.sort(cities, new Comparator<Point2D>(){
+
+			@Override
+			public int compare(Point2D p1, Point2D p2) {
+				
+				double a = Math.sqrt(Math.pow(p1.getX(), 2) + Math.pow(p1.getY(),2));
+				
+				double b = Math.sqrt(Math.pow(p2.getX(), 2) + Math.pow(p2.getY(),2));
+				
+				if(a < b){
+					return 1;
+				}
+				if(a > b){
+					return -1;
+				}
+				
+				return 0;
+			}
+			
+		});
 		//Do not remove the first city in list, will cause the algorithm to skip the final city in result
-		//This will ensure a random city start, might improve the route length
-		Point2D currentCity = cities.get(randInt(0, cities.size()-1));
+		Point2D currentCity = cities.get(0);
 		
 		while(cities.size() > 0) {
 			
