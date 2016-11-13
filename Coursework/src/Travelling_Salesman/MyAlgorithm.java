@@ -2,21 +2,23 @@ package Travelling_Salesman;
 
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
+import java.util.Comparator;
 
-public class NearestNeighbour {
+public class MyAlgorithm {
 	
 	public double getDistance(Point2D currentCity, Point2D possibleCity) {
 		
 		return Point2D.distance(currentCity.getX(), currentCity.getY(), possibleCity.getX(), possibleCity.getY());
 	}
+	
 
-	public ArrayList<Point2D> nearestNeighbour(ArrayList<Point2D> cities) {
+	public ArrayList<Point2D> algorithm(ArrayList<Point2D> cities){
 		
 		ArrayList<Point2D> result = new ArrayList<Point2D>();
 		Point2D closest = null;
 		//Do not remove the first city in list, will cause the algorithm to skip the final city in result
 		Point2D currentCity = cities.get(0);
-			
+		
 		while(cities.size() > 0) {
 			
 			result.add(currentCity);
@@ -39,5 +41,4 @@ public class NearestNeighbour {
 			
 		return result;
 	}
-	
 }

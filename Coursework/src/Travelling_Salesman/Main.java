@@ -2,10 +2,12 @@ package Travelling_Salesman;
 
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Main {
 	
-	public static double routeLength(ArrayList<Point2D> cities){
+	public static double routeLength(ArrayList<Point2D> cities) {
 		//Calculate the length of a TSP route held in an ArrayList as a set of Points
 		double result=0; //Holds the route length
 		Point2D prev = cities.get(cities.size()-1);
@@ -22,15 +24,36 @@ public class Main {
 
 	
 	public static void main(String[] args) {
+		
+		NearestNeighbour neighbour = new NearestNeighbour();
+		MyAlgorithm test = new MyAlgorithm();
 					
 		ArrayList<Point2D> cities = new ArrayList<Point2D>();
 				
-		cities = FileLoader.loadTSPLib("rl5915.tsp");
+		//All the city files here
 		
-		for(Point2D city : cities){
-			System.out.println(city.toString());
-		}
+		//cities = FileLoader.loadTSPLib("src/Travelling_Salesman/berlin52.tsp");
+		cities = FileLoader.loadTSPLib("src/Travelling_Salesman/rl5915.tsp");
+
+		System.out.println("Before ArrayList size: " + cities.size());
+		System.out.format("Before route length: %f%n", routeLength(cities));
 		
+		
+		//Store the system time before running the algorithm
+		final double startTime = System.currentTimeMillis();
+		
+		//cities = neighbour.nearestNeighbour(cities);
+		cities = test.algorithm(cities);
+		
+		//Store the system time after running an algorithm
+		final double endTime = System.currentTimeMillis();
+		
+		
+		System.out.println("After ArrayList size: " + cities.size());
+		System.out.format("After route length: %f%n", routeLength(cities));
+		
+		//Display the time taken to complete the algorithm
+		System.out.format("Time to run algorithm: %fs%n", (endTime - startTime)/1000.0);
 		
 	}
 
