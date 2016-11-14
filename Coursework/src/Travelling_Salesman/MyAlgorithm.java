@@ -31,27 +31,28 @@ public class MyAlgorithm {
 		ArrayList<Point2D> result = new ArrayList<Point2D>();
 		Point2D closest = null;
 		
+		
 		//Sorting the arrayList from biggest to lowest in both coordinates
 		Collections.sort(cities, new Comparator<Point2D>(){
 
-			@Override
 			public int compare(Point2D p1, Point2D p2) {
 				
 				double a = Math.sqrt(Math.pow(p1.getX(), 2) + Math.pow(p1.getY(),2));
 				
 				double b = Math.sqrt(Math.pow(p2.getX(), 2) + Math.pow(p2.getY(),2));
 				
-				if(a < b){
-					return 1;
-				}
 				if(a > b){
 					return -1;
+				}
+				if(a < b){
+					return 1;
 				}
 				
 				return 0;
 			}
 			
 		});
+		
 		//Do not remove the first city in list, will cause the algorithm to skip the final city in result
 		Point2D currentCity = cities.get(0);
 		

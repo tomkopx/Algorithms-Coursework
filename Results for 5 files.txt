@@ -1,0 +1,89 @@
+Berlin 52 cities:
+
+Nearest Neighbour -
+
+After route length: 8980.918279
+Time to run algorithm: 0.001000s
+
+Nearest Neighbour enhanced (no sort) - 
+
+After route length: 9208.118155
+Time to run algorithm: 0.001000s
+
+
+Nearest Neighbour enhanced (sort) - 
+
+After route length: 9504.133066
+Time to run algorithm: 0.006000s
+
+
+D 493 cities:
+
+Nearest Neighbour -
+
+After route length: 43646.373961
+Time to run algorithm: 0.006000s
+
+Nearest Neighbour enhanced (no sort) - 
+
+After route length: 44362.332280
+Time to run algorithm: 0.004000s
+
+Nearest Neighbour enhanced (sort) - 
+
+After route length: 46135.989895
+Time to run algorithm: 0.011000s
+
+
+RL 1889 cities:
+
+Nearest Neighbour -
+
+After route length: 400684.638436
+Time to run algorithm: 0.049000s
+
+Nearest Neighbour enhanced (no sort) - 
+
+After route length: 400684.638436
+Time to run algorithm: 0.046000s
+
+Nearest Neighbour enhanced (sort) - 
+
+After route length: 407181.446433
+Time to run algorithm: 0.056000s
+
+
+RL 5915 cities:
+
+Nearest Neighbour -
+
+After route length: 707498.630752
+Time to run algorithm: 0.470000s
+
+Nearest Neighbour enhanced (no sort) - 
+
+After route length: 696508.319349
+Time to run algorithm: 0.396000s
+
+Nearest Neighbour enhanced (sort) - 
+
+After route length: 701014.481381
+Time to run algorithm: 0.420000s
+
+
+RL 11849 cities:
+
+Nearest Neighbour -
+
+After route length: 1139495.914083
+Time to run algorithm: 1.802000s
+
+Nearest Neighbour enhanced (no sort) -
+
+After route length: 1126219.470421
+Time to run algorithm: 1.633000s
+
+Nearest Neighbour enhanced (sort) - 
+
+After route length: 1123646.172113
+Time to run algorithm: 1.644000s

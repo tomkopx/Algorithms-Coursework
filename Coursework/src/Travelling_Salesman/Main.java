@@ -3,6 +3,7 @@ package Travelling_Salesman;
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
 
+
 public class Main {
 	
 	public static double routeLength(ArrayList<Point2D> cities) {
@@ -23,7 +24,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		//NearestNeighbour neighbour = new NearestNeighbour();
+		NearestNeighbour neighbour = new NearestNeighbour();
 		MyAlgorithm test = new MyAlgorithm();
 					
 		ArrayList<Point2D> cities = new ArrayList<Point2D>();
