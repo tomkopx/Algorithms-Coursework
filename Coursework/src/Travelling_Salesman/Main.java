@@ -25,7 +25,8 @@ public class Main {
 	public static void main(String[] args) {
 		
 		NearestNeighbour neighbour = new NearestNeighbour();
-		MyAlgorithm test = new MyAlgorithm();
+		MyAlgorithm limit = new MyAlgorithm();
+		SortLimit sort = new SortLimit();
 					
 		ArrayList<Point2D> cities = new ArrayList<Point2D>();
 				
@@ -49,7 +50,8 @@ public class Main {
 		final double startTime = System.currentTimeMillis();
 		
 		//cities = neighbour.nearestNeighbour(cities);
-		cities = test.algorithm(cities);
+		//cities = limit.algorithm(cities);
+		cities = sort.algorithm(cities);
 		
 		//Store the system time after running an algorithm
 		final double endTime = System.currentTimeMillis();
@@ -59,7 +61,7 @@ public class Main {
 		System.out.format("After route length: %f%n", routeLength(cities));
 		
 		//Display the time taken to complete the algorithm
-		System.out.format("Time to run algorithm: %fs%n", (endTime - startTime)/1000.0);
+		System.out.format("Time to run algorithm: %fms%n", (endTime - startTime));
 		
 	}
 
