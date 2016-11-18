@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 public class NearestNeighbour {
 	
+	//Function to get the distance between 2 locations
 	public double getDistance(Point2D currentCity, Point2D possibleCity) {
 		
 		return Point2D.distance(currentCity.getX(), currentCity.getY(), possibleCity.getX(), possibleCity.getY());

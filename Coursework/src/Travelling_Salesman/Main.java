@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 public class Main {
 	
+	//Function that calculates the route length
 	public static double routeLength(ArrayList<Point2D> cities) {
 		//Calculate the length of a TSP route held in an ArrayList as a set of Points
 		double result=0; //Holds the route length
@@ -21,26 +22,23 @@ public class Main {
 		return result;
 	}
 
-	
+	//Main method used for running the algorithms
 	public static void main(String[] args) {
 		
+		//Create objects to call the algorithms
 		NearestNeighbour neighbour = new NearestNeighbour();
-		MyAlgorithm limit = new MyAlgorithm();
+		Limit limit = new Limit();
 		SortLimit sort = new SortLimit();
 					
 		ArrayList<Point2D> cities = new ArrayList<Point2D>();
 				
-		//All the city files here
+		//All the city files here, uncomment the one you want to use
 		
 		//cities = FileLoader.loadTSPLib("src/Travelling_Salesman/berlin52.tsp");
-		
 		//cities = FileLoader.loadTSPLib("src/Travelling_Salesman/d493.tsp");
-		
 		//cities = FileLoader.loadTSPLib("src/Travelling_Salesman/rl1889.tsp");
-		
 		//cities = FileLoader.loadTSPLib("src/Travelling_Salesman/rl5915.tsp");
-		
-		cities = FileLoader.loadTSPLib("src/Travelling_Salesman/rl11849.tsp");
+		//cities = FileLoader.loadTSPLib("src/Travelling_Salesman/rl11849.tsp");
 
 		System.out.println("Before ArrayList size: " + cities.size());
 		System.out.format("Before route length: %f%n", routeLength(cities));
@@ -49,9 +47,11 @@ public class Main {
 		//Store the system time before running the algorithm
 		final double startTime = System.currentTimeMillis();
 		
+		//Uncomment the algorithm you want to use
+		
 		//cities = neighbour.nearestNeighbour(cities);
 		//cities = limit.algorithm(cities);
-		cities = sort.algorithm(cities);
+		//cities = sort.algorithm(cities);
 		
 		//Store the system time after running an algorithm
 		final double endTime = System.currentTimeMillis();
